@@ -10,6 +10,16 @@ Project --> **Backend project with user entities** <br>
 Channel --> **TecEdu4All 1,26 mil inscritos** <br>
 Date Created --> **4 de fev. de 2023**
 
+### npm Commands
+
+npx typeorm init --name project --database mysql<br>
+remove mysql<br>
+npm install express cors express-async-errors mysql2<br>
+npm install @types/express @types/cors ts-node-dev -D<br>
+
+npm run typeorm migration:create src/database/migrations/CreateUsersTable<br>
+npm run typeorm -- -d ./src/database/data-source.ts migration:run<br>
+
 ### Observations
 
 -  created with typeORM

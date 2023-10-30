@@ -6,9 +6,11 @@ import { AppDataSource } from "../../database/data-source"
 const userRepository = AppDataSource.getRepository(User)
 
 const getUsers = (): Promise<IUser[]> => {
-   // IUser was the interface we created // we are returning an array of that
-   // this returns an array based promise
    return userRepository.find() // same as Select * from Users
 }
 
-export default { getUsers }
+const createUser = (user: IUser): Promise<IUser> => {
+   return userRepository.save(user)
+}
+
+export default { getUsers, createUser }
